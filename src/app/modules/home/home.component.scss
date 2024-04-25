@@ -1,9 +1,10 @@
+
 .grid {
   background-image: url('../../../assets/sean-pollock-PhYq704ffdA-unsplash.jpg') !important;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100%;
+  height: 100vh; /* Mudar para % caso de errado */
 }
 
 @media  screen and (min-width: 1400px) {

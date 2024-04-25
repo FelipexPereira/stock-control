@@ -1,0 +1,11 @@
+baixar td que vai utilizar no projeto
+
+apagar tudo do (app.component.html) e colocar o <router-outlet></router-outlet> para direcionar
+
+Agora nas rotas(aap-routing.module.ts) criar uma rota para o component que queremos que inicia-se 
+const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent
+  }
+];
