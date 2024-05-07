@@ -38,11 +38,11 @@ export class HomeComponent {
         this.signupForm.value as SignupUserRequest
       ).subscribe({
         next: (response) => {
-          if(response){
-            alert('Usuário teste criado com sucesso')
+          if (response) {
+            alert('Usuário teste criado com sucesso');
           }
         },
-        error: (err) => console.log(err)
+        error: (err) => console.log(err),
       });
     }
   }
