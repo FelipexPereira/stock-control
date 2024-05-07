@@ -1,12 +1,14 @@
+import { UserService } from './../../services/user/user.service';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { SignupUserRequest } from 'src/app/models/interfaces/user/SignupUserRequest';
+import { SignupUserResponse } from 'src/app/models/interfaces/user/signupUserResponse';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-
 export class HomeComponent {
   loginCard = true;
 
@@ -21,15 +23,27 @@ export class HomeComponent {
     password: ['', Validators.required],
   });
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private UserService: UserService
+  ) {}
 
   onSubmitLoginForm(): void {
     console.log('DADOS DO FORMULARIO DE LOGIN', this.loginForm.value);
   }
 
   onSubmitSignupForm(): void {
-    console.log('DADOS DO FORMULARIO DE CADASTRO', this.signupForm.value);
+    if (this.signupForm.value && this.signupForm.valid) {
+      this.UserService.signupUser(
+        this.signupForm.value as SignupUserRequest
+      ).subscribe({
+        next: (response) => {
+          if(response){
+            alert('Usuário teste criado com sucesso')
+          }
+        },
+        error: (err) => console.log(err)
+      });
+    }
   }
-
-
 }
