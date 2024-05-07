@@ -1,6 +1,6 @@
-export interface AuthResponse{
-  id: string,
-  name: string,
-  email: string,
-  toke: string
+export interface AuthResponse {
+  id: string;
+  name: string;
+  email: string;
+  token: string;
 }
