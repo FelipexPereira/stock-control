@@ -8,7 +8,7 @@
         <p-card
           styleClass="mt-10"
           header="Login"
-          subheader="Faça login com sua conta"
+          subheader="Faça login com sua conta existente!"
           *ngIf="loginCard"
         >
           <div
@@ -36,15 +36,15 @@
               type="submit"
               pButton
               pRipple
-              label="login"
+              label="Login"
               [disabled]="!this.loginForm.valid"
             ></button>
           </div>
           <span
             class="flex justify-content-center align-content-center text-align-center mt-3 text-red-600 font-semibold"
-            style="cursor: pointer"
             (click)="loginCard = !loginCard"
-            >Criar conta</span
+            style="cursor: pointer"
+            >Criar Conta</span
           >
         </p-card>
       </form>
@@ -54,7 +54,7 @@
         <p-card
           styleClass="mt-10"
           header="Criar conta"
-          subheader="Crie já sua conta"
+          subheader="Crie já sua conta gratuita!"
           *ngIf="!loginCard"
         >
           <div

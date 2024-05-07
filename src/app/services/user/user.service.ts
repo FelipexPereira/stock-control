@@ -5,13 +5,13 @@ import { SignupUserRequest } from 'src/app/models/interfaces/user/SignupUserRequ
 import { AuthRequest } from 'src/app/models/interfaces/user/auth/AuthRequest';
 import { AuthResponse } from 'src/app/models/interfaces/user/auth/AuthResponse';
 import { SignupUserResponse } from 'src/app/models/interfaces/user/signupUserResponse';
-import { enviroments } from 'src/enviroments/enviroment';
+import { enviroment } from 'src/enviroments/enviroment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  private API_URL = enviroments.API_URL;
+  private API_URL = enviroment.API_URL;
 
   constructor(private http: HttpClient) {}
 
